@@ -12,7 +12,7 @@ a. Obtener la ER para el AFD
 b. Obtener la unión y concatenación para los 2 AP.
 
 
-El link del repositorio : https://github.com/GRUPO-4-GRAFOS/GLF-2021s2-Trabajo2-Entrega-Grupo4.git
+El link del repositorio : https://github.com/GRUPO-4-GRAFOS/GLF-2021s2-Trabajo3-Entrega-Grupo4.git
 
 ## integrantes
   - Lucas Catillo
