@@ -17,6 +17,8 @@ El link del repositorio : https://github.com/GRUPO-4-GRAFOS/GLF-2021s2-Trabajo3-
 ## integrantes
   - Lucas Catillo
   - Nicolas Garay
+  - Javiera Gonzalez
   - Rocio Leiva 
   - Paula Ruiz
   - Victor Venegas
+  
