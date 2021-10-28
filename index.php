@@ -47,7 +47,7 @@
           <button class="btn btn-dark btn-lg" id="afd">AFD</button>
         </div>
         <div class="col-sm-6">
-          <button class="btn btn-dark btn-lg" id="pl">2PL</button>
+          <button class="btn btn-dark btn-lg" id="pl">2AP</button>
         </div>
         <!--Fin Botones-->
       </div>
