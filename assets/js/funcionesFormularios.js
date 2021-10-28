@@ -1,31 +1,39 @@
+import { peticionInfo } from './logs.js';
+import { validarionesFormularioAfd } from './validacionesForm.js';
+
 const div = document.querySelector('#form');
+
 export const crearFormularioAfd = () => {
   const html = `
         <div class="col-6">
           <h1 class="text-center">Afd</h1>
           <!--Inicio Formularios AFD-->
-          <form id="from-afn">
+          <form id="form-afd">
             <input
               placeholder="Ingrese abecedario: A, B"
               type="text"
               class="form-control"
+              id="abecedario"
             />
             <input
               placeholder="Estado inicial: q0"
               type="text"
               class="form-control mt-3"
+              id="estadoInicial"
             />
             <input
               placeholder="Estados Automatas: q1, q2, q3"
               type="text"
               class="form-control mt-3"
+              id="estadosAutomata"
             />
             <input
               placeholder="Estados finales: qf, qf1"
               type="text"
               class="form-control mt-3"
+              id="estadosFinales"
             />
-            <input value="Enviar" class="btn bt-lg btn-dark mt-3" />
+            <input value="Crear automata" class="btn bt-lg btn-dark mt-3" type="submit" id="btn-afd-form" />
           </form>
           <!--fin Formularios AFD-->
           <!--Inicio Formularios transiciones-->
@@ -46,7 +54,7 @@ export const crearFormularioAfd = () => {
               type="text"
               class="form-control mt-3"
             />
-            <input value="Enviar" class="btn bt-lg btn-dark mt-3" />
+            <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
           <!--fin Formularios transiciones-->
         </div>`;
@@ -57,8 +65,8 @@ export const crearFormularioAfd = () => {
 export const crearFormularioPl = () => {
   const html = `
     <div class="col-sm-6">
-    <h1 class="text-center mt-3">PL1</h1>
-    <form id="form-pl1">
+    <h1 class="text-center mt-3">1AP</h1>
+    <form id="form-ap1">
       <input
         placeholder="ingresa algo"
         class="form-control mt-3"
@@ -83,12 +91,13 @@ export const crearFormularioPl = () => {
         value="Ingresar datos"
         class="btn btn-dark mt-3"
         type="submit"
+        id="btn-form-ap1"
       />
     </form>
   </div>
   <div class="col-sm-6">
-    <h1 class="text-center mt-3">PL2</h1>
-    <form id="form-pl2">
+    <h1 class="text-center mt-3">2AP</h1>
+    <form id="form-ap2">
       <input
         placeholder="ingresa algo"
         class="form-control mt-3"
@@ -113,9 +122,49 @@ export const crearFormularioPl = () => {
         value="Ingresar datos"
         class="btn btn-dark mt-3"
         type="submit"
+        id="btn-form-ap2"
       />
     </form>
   </div>`;
 
   div.innerHTML = html;
+};
+
+export const ejecutarFormularioAfd = () => {
+  /**Recoger datos del automata**/
+  const abecedario = document.querySelector('#abecedario').value.split(',');
+  const estadoInicial = document.querySelector('#estadoInicial').value;
+  const estadosAutomata = document
+    .querySelector('#estadosAutomata')
+    .value.split(',');
+  const estadosFinales = document
+    .querySelector('#estadosFinales')
+    .value.split(',');
+
+  /**Comprobar validaciones**/
+  const validaciones = validarionesFormularioAfd(
+    abecedario,
+    estadoInicial,
+    estadosAutomata,
+    estadosFinales
+  );
+  console.log(validaciones);
+
+  if (!validaciones) {
+    alert('si');
+    return;
+  }
+
+  estadosAutomata.push(...estadosFinales);
+  estadosAutomata.unshift(estadoInicial);
+
+  const automata = {
+    abecedario: abecedario,
+    estadoInicial: estadoInicial,
+    estadosAutomata: estadosAutomata,
+    estadosFinales: estadosFinales,
+  };
+
+  console.log(automata);
+  peticionInfo(automata);
 };
