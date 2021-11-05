@@ -6,9 +6,14 @@ import {
 } from './validacionesForm.js';
 
 const div = document.querySelector('#form');
-let automataAFD,
-  conecAfd = [];
+let automataAFD;
+let automataP1;
+let automataP2;
+let conecAfd = [];
+let conecAp1 = [];
+let conecAp2 = [];
 
+/** Funciones para crear formularios **/
 export const crearFormularioAfd = () => {
   const html = `
         <div class="col-6">
@@ -166,16 +171,19 @@ export const crearFormularioPl = () => {
               placeholder="Estado inicio: q0, q1..."
               type="text"
               class="form-control"
+              id="estadoInicio-ap-2"
             />
             <input
               placeholder="simbolo(del abecedario):"
               type="text"
               class="form-control mt-3"
+              id="simbolo-ap-2"
             />
             <input
               placeholder="Estados Llegada: qf"
               type="text"
               class="form-control mt-3"
+              id="estadoFinal-ap-2"
             />
             <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
@@ -184,41 +192,49 @@ export const crearFormularioPl = () => {
   div.innerHTML = html;
 };
 
+//?==========================================================Formulario AFD=================================================================================??/
+
 export const ejecutarFormularioAfd = () => {
   /**Recoger datos del automata**/
-  const abecedario = document.querySelector('#abecedario').value;
-  const estadoInicial = document.querySelector('#estadoInicial').value;
-  const estadosAutomata = document
-    .querySelector('#estadosAutomata')
-    .value.split(',');
-  const estadosFinales = document
-    .querySelector('#estadosFinales')
-    .value.split(',');
+  const abecedario = document.querySelector('#abecedario');
+  const estadoInicial = document.querySelector('#estadoInicial');
+  const estadosAutomata = document.querySelector('#estadosAutomata');
+  const estadosFinales = document.querySelector('#estadosFinales');
 
   /**Comprobar validaciones**/
   const validaciones = validarionesFormularioAfd(
-    abecedario,
-    estadoInicial,
-    estadosAutomata,
-    estadosFinales
+    abecedario.value,
+    estadoInicial.value,
+    estadosAutomata.value.split(','),
+    estadosFinales.value.split(',')
   );
+
+  const todosLosEstados = estadosAutomata.value.split(',');
 
   if (!validaciones) {
     return;
   }
 
-  estadosAutomata.push(...estadosFinales);
-  estadosAutomata.unshift(estadoInicial);
+  todosLosEstados.push(...estadosFinales.value.split(','));
+  todosLosEstados.unshift(estadoInicial.value);
 
   automataAFD = {
-    abecedario: abecedario.split(','),
-    estadoInicial: estadoInicial,
-    estadosAutomata: estadosAutomata,
-    estadosFinales: estadosFinales,
+    abecedario: abecedario.value.split(','),
+    estadoInicial: estadoInicial.value,
+    estadosAutomata: todosLosEstados,
+    estadosFinales: estadosFinales.value.split(','),
     afd: true,
   };
 
   peticionInfo(automataAFD);
+  localStorage.setItem('ap1', JSON.stringify(automataAFD));
+
+  abecedario.value = '';
+  estadoInicial.value = '';
+  estadosAutomata.value = '';
+  estadosFinales.value = '';
+
+  alert('Automata Agregado');
 };
 
 export const ejecutarFormularioTransicionesAfd = () => {
@@ -227,14 +243,14 @@ export const ejecutarFormularioTransicionesAfd = () => {
     return;
   }
 
-  const estadoInicial = document.querySelector('#estadoInicio-afd').value;
-  const simbolo = document.querySelector('#simbolo-afd').value;
-  const estadoLlegada = document.querySelector('#estadoLlegada-afd').value;
+  const estadoInicial = document.querySelector('#estadoInicio-afd');
+  const simbolo = document.querySelector('#simbolo-afd');
+  const estadoLlegada = document.querySelector('#estadoLlegada-afd');
 
   const validaciones = validacionesTransiciones(
-    estadoInicial,
-    simbolo,
-    estadoLlegada,
+    estadoInicial.value,
+    simbolo.value,
+    estadoLlegada.value,
     automataAFD.abecedario,
     automataAFD.estadosAutomata
   );
@@ -243,8 +259,191 @@ export const ejecutarFormularioTransicionesAfd = () => {
     return;
   }
 
-  let conec = { estadoInicial, simbolo, estadoLlegada };
+  let conec = {
+    estadoInicial: estadoInicial.value,
+    simbolo: simbolo.value,
+    estadoLlegada: estadoLlegada.value,
+    automata: 'AFD',
+  };
   conecAfd.push(conec);
 
   peticionInfo(conec);
+  localStorage.setItem('transAfd', JSON.stringify(conecAfd));
+
+  estadoInicial.value = '';
+  simbolo.value = '';
+  estadoLlegada.value = '';
+
+  alert('Transicion Agregada');
 };
+
+//? =====================================================Formulario Automata Pilas 1===========================================================================?//
+
+export const ejecutarFormularioAP1 = () => {
+  /**Recoger datos del automata**/
+  const abecedario = document.querySelector('#abecedario-ap-1');
+  const estadoInicial = document.querySelector('#estadoInicial-ap-1');
+  let estadosAutomata = document.querySelector('#estadosAutomata-ap-1');
+  const estadosFinales = document.querySelector('#estadosFinales-ap-1');
+
+  /**Comprobar validaciones**/
+  const validaciones = validarionesFormularioAfd(
+    abecedario.value,
+    estadoInicial.value,
+    estadosAutomata.value.split(','),
+    estadosFinales.value.split(',')
+  );
+
+  const todosLosEstados = estadosAutomata.value.split(',');
+
+  if (!validaciones) {
+    return;
+  }
+
+  todosLosEstados.push(...estadosFinales.value.split(','));
+  todosLosEstados.unshift(estadoInicial.value);
+
+  automataP1 = {
+    abecedario: abecedario.value.split(','),
+    estadoInicial: estadoInicial.value,
+    estadosAutomata: todosLosEstados,
+    estadosFinales: estadosFinales.value.split(','),
+    pl: true,
+  };
+
+  peticionInfo(automataP1);
+  localStorage.setItem('ap1', JSON.stringify(automataP1));
+
+  abecedario.value = '';
+  estadoInicial.value = '';
+  estadosAutomata.value = '';
+  estadosFinales.value = '';
+
+  alert('Automata Agregado');
+};
+
+export const ejecutarFormularioTransicionesAP1 = () => {
+  if (isEmptyObject(automataP1)) {
+    alert('ingrese el automata primero');
+    return;
+  }
+
+  const estadoInicial = document.querySelector('#estadoInicio-ap-1');
+  const simbolo = document.querySelector('#simbolo-ap-1');
+  const estadoLlegada = document.querySelector('#estadoFinal-ap-1');
+
+  const validaciones = validacionesTransiciones(
+    estadoInicial.value,
+    simbolo.value,
+    estadoLlegada.value,
+    automataP1.abecedario,
+    automataP1.estadosAutomata
+  );
+
+  if (!validaciones) {
+    return;
+  }
+
+  let conec = {
+    estadoInicial: estadoInicial.value,
+    simbolo: simbolo.value,
+    estadoLlegada: estadoLlegada.value,
+    automata: 'PL1',
+  };
+  conecAfd.push(conec);
+
+  peticionInfo(conec);
+  localStorage.setItem('transAp2', JSON.stringify(conecAfd));
+
+  estadoInicial.value = '';
+  simbolo.value = '';
+  estadoLlegada.value = '';
+
+  alert('Transicion Agregada');
+};
+
+//?====================================================Formulario Automata Pilas 2============================================================================?//
+export const ejecutarFormularioAP2 = () => {
+  /**Recoger datos del automata**/
+  const abecedario = document.querySelector('#abecedario-ap-2');
+  const estadoInicial = document.querySelector('#estadoInicial-ap-2');
+  let estadosAutomata = document.querySelector('#estadosAutomata-ap-2');
+  const estadosFinales = document.querySelector('#estadosFinales-ap-2');
+
+  /**Comprobar validaciones**/
+  const validaciones = validarionesFormularioAfd(
+    abecedario.value,
+    estadoInicial.value,
+    estadosAutomata.value.split(','),
+    estadosFinales.value.split(',')
+  );
+
+  const todosLosEstados = estadosAutomata.value.split(',');
+
+  if (!validaciones) {
+    return;
+  }
+
+  todosLosEstados.push(...estadosFinales.value.split(','));
+  todosLosEstados.unshift(estadoInicial.value);
+
+  automataP2 = {
+    abecedario: abecedario.value.split(','),
+    estadoInicial: estadoInicial.value,
+    estadosAutomata: todosLosEstados,
+    estadosFinales: estadosFinales.value.split(','),
+    pl: true,
+  };
+
+  peticionInfo(automataP2);
+  localStorage.setItem('ap2', JSON.stringify(automataP2));
+
+  abecedario.value = '';
+  estadoInicial.value = '';
+  estadosAutomata.value = '';
+  estadosFinales.value = '';
+
+  alert('Automata Agregado');
+};
+
+export const ejecutarFormularioTransicionesAP2 = () => {
+  if (isEmptyObject(automataP1)) {
+    alert('ingrese el automata primero');
+    return;
+  }
+
+  const estadoInicial = document.querySelector('#estadoInicio-ap-1');
+  const simbolo = document.querySelector('#simbolo-ap-1');
+  const estadoLlegada = document.querySelector('#estadoFinal-ap-1');
+
+  const validaciones = validacionesTransiciones(
+    estadoInicial.value,
+    simbolo.value,
+    estadoLlegada.value,
+    automataP1.abecedario,
+    automataP1.estadosAutomata
+  );
+
+  if (!validaciones) {
+    return;
+  }
+
+  let conec = {
+    estadoInicial: estadoInicial.value,
+    simbolo: simbolo.value,
+    estadoLlegada: estadoLlegada.value,
+    automata: 'PL2',
+  };
+  conecAfd.push(conec);
+
+  peticionInfo(conec);
+  localStorage.setItem('transAp2', JSON.stringify(conecAfd));
+
+  estadoInicial.value = '';
+  simbolo.value = '';
+  estadoLlegada.value = '';
+
+  alert('Transicion Agregada');
+};
+
+export const LimpiarLocalStorage = () => localStorage.clear();

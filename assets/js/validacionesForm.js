@@ -5,8 +5,7 @@ export const validarionesFormularioAfd = (
   abecedario,
   estadoInicial,
   estadosAutomata,
-  estadosFinales,
-  tipo = '' //dar valor por defecto
+  estadosFinales
 ) => {
   if (abecedario === '') {
     peticionWarning(msg, 'abecedario');
@@ -74,7 +73,7 @@ export const validacionesTransiciones = (
     } else if (cont === alfabeto.length) {
       alert(`El simbolo ${simbolo} no pertenece al alfabeto`);
       peticionWarning(
-        'El usuario ah agregado un sibolo que no existe en el alfabeto:',
+        'El usuario ah agregado un simbolo que no existe en el alfabeto:',
         'alfabeto'
       );
 
