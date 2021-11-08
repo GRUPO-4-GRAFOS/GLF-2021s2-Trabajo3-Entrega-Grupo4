@@ -34,29 +34,9 @@
           />
         </div>
       </nav>
-      <!-- fin Navbar -->
-      <!--Inicio row Instrucciones-->
-      <div class="row mt-3">
-        <div class="col-sm-12"></div>
+      <h1> Si </h1>
       </div>
-      <!--fin row Instrucciones-->
-      <!--Inicio Row-->
-      <div class="row mt-3">
-        <!--Inicio Botones-->
-        <div class="col-sm-6">
-          <button class="btn btn-dark btn-lg" id="afd">AFD</button>
-        </div>
-        <div class="col-sm-6">
-          <button class="btn btn-dark btn-lg" id="pl">2AP</button>
-        </div>
-        <!--Fin Botones-->
-      </div>
-      <!--fin Row-->
-      <!--Inicio Row-->
-      <div class="row justify-content-center mt-3" id="form"></div>
-      <!--fin Row-->
-    </div>
     <!--Fin container-->
   </body>
-  <script src="./assets/js/index.js" type="module"></script>
+  <script src="./assets/js/funcionesap.js" type="module"></script>
 </html>

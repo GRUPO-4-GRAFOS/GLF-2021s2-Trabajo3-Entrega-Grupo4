@@ -68,8 +68,9 @@ export const crearFormularioAfd = () => {
               class="form-control mt-3"
               id="estadoLlegada-afd"
             />
-            <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
+            <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
+          <a href = "./vista.php" class = "btn btn-dark my-3">Pasar a "ER" </a>
           <!--fin Formularios transiciones-->
         </div>`;
 
@@ -130,7 +131,7 @@ export const crearFormularioPl = () => {
               class="form-control mt-3"
               id="estadoFinal-ap-1"
             />
-            <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
+            <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
   </div>
   <div class="col-sm-6">
@@ -185,8 +186,9 @@ export const crearFormularioPl = () => {
               class="form-control mt-3"
               id="estadoFinal-ap-2"
             />
-            <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
+            <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
+          <a href = "./vistaap.php" class = "btn btn-dark my-3"> Ver Automatas AP </a>
   </div>`;
 
   div.innerHTML = html;
@@ -350,10 +352,10 @@ export const ejecutarFormularioTransicionesAP1 = () => {
     estadoLlegada: estadoLlegada.value,
     automata: 'PL1',
   };
-  conecAfd.push(conec);
+  conecAp1.push(conec);
 
   peticionInfo(conec);
-  localStorage.setItem('transAp1', JSON.stringify(conecAfd));
+  localStorage.setItem('transAp1', JSON.stringify(conecAp1));
 
   estadoInicial.value = '';
   simbolo.value = '';
@@ -412,16 +414,16 @@ export const ejecutarFormularioTransicionesAP2 = () => {
     return;
   }
 
-  const estadoInicial = document.querySelector('#estadoInicio-ap-1');
-  const simbolo = document.querySelector('#simbolo-ap-1');
-  const estadoLlegada = document.querySelector('#estadoFinal-ap-1');
+  const estadoInicial = document.querySelector('#estadoInicio-ap-2');
+  const simbolo = document.querySelector('#simbolo-ap-2');
+  const estadoLlegada = document.querySelector('#estadoFinal-ap-2');
 
   const validaciones = validacionesTransiciones(
     estadoInicial.value,
     simbolo.value,
     estadoLlegada.value,
-    automataP1.abecedario,
-    automataP1.estadosAutomata
+    automataP2.abecedario,
+    automataP2.estadosAutomata,
   );
 
   if (!validaciones) {
@@ -434,10 +436,10 @@ export const ejecutarFormularioTransicionesAP2 = () => {
     estadoLlegada: estadoLlegada.value,
     automata: 'PL2',
   };
-  conecAfd.push(conec);
+  conecAp2.push(conec);
 
   peticionInfo(conec);
-  localStorage.setItem('transAp2', JSON.stringify(conecAfd));
+  localStorage.setItem('transAp2', JSON.stringify(conecAp2));
 
   estadoInicial.value = '';
   simbolo.value = '';
