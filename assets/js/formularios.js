@@ -54,7 +54,7 @@ export const Formularios = () => {
     });
 
     /**=============================================Formulario ap2=====================================================================**/
-    const ap2Form = document.querySelector('#form-ap-2');
+    const ap2Form = document.querySelector('#form-ap2');
     const ap2FormConnect = document.querySelector('#form-conecciones-ap-2');
 
     ap2Form.addEventListener('submit', e => {

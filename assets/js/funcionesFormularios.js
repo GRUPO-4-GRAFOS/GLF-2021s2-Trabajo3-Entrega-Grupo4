@@ -234,7 +234,7 @@ export const ejecutarFormularioAfd = () => {
   };
 
   peticionInfo(automataAFD);
-  localStorage.setItem('ap1', JSON.stringify(automataAFD));
+  localStorage.setItem('AFD', JSON.stringify(automataAFD));
 
   abecedario.value = '';
   estadoInicial.value = '';
@@ -360,7 +360,7 @@ export const ejecutarFormularioTransicionesAP1 = () => {
   conecAfd.push(conec);
 
   peticionInfo(conec);
-  localStorage.setItem('transAp2', JSON.stringify(conecAfd));
+  localStorage.setItem('transAp1', JSON.stringify(conecAfd));
 
   estadoInicial.value = '';
   simbolo.value = '';
@@ -414,7 +414,7 @@ export const ejecutarFormularioAP2 = () => {
 };
 
 export const ejecutarFormularioTransicionesAP2 = () => {
-  if (isEmptyObject(automataP1)) {
+  if (isEmptyObject(automataP2)) {
     alert('ingrese el automata primero');
     return;
   }
