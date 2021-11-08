@@ -69,8 +69,14 @@ export const crearFormularioAfd = () => {
               id="estadoLlegada-afd"
             />
             <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
-          </form>
+
+            </form>
           <!--fin Formularios transiciones-->
+          <form>
+          
+          <input value="aaa" "href="./afd.php" id="btn-afd-send" class="btn btn-default btn-dark btn-large" type="submit" />
+
+          </form>
         </div>`;
 
   div.innerHTML = html;
@@ -131,7 +137,8 @@ export const crearFormularioPl = () => {
               id="estadoFinal-ap-1"
             />
             <input value="Crear Coneccion" class="btn bt-lg btn-dark mt-3" type="submit" />
-          </form>
+
+            </form>
   </div>
   <div class="col-sm-6">
     <h1 class="text-center mt-3">2AP</h1>
@@ -162,7 +169,7 @@ export const crearFormularioPl = () => {
               id="estadosFinales-ap-2"
             />
             <input value="Crear automata" class="btn bt-lg btn-dark mt-3" type="submit" id="btn-afd-form" />
-          </form>
+            </form>
           <!--fin Formularios AFD-->
           <!--Inicio Formularios transiciones-->
           <h1 class="text-center mt-3">Transiciones</h1>
