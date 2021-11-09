@@ -72,6 +72,11 @@ export const crearFormularioAfd = () => {
           </form>
           <a href = "./vista.php" class = "btn btn-dark my-3">Pasar a "ER" </a>
           <!--fin Formularios transiciones-->
+          <form>
+          
+          <input value="aaa" "href="./afd.php" id="btn-afd-send" class="btn btn-default btn-dark btn-large" type="submit" />
+
+          </form>
         </div>`;
 
   div.innerHTML = html;
@@ -163,7 +168,7 @@ export const crearFormularioPl = () => {
               id="estadosFinales-ap-2"
             />
             <input value="Crear automata" class="btn bt-lg btn-dark mt-3" type="submit" id="btn-afd-form" />
-          </form>
+            </form>
           <!--fin Formularios AFD-->
           <!--Inicio Formularios transiciones-->
           <h1 class="text-center mt-3">Transiciones</h1>
