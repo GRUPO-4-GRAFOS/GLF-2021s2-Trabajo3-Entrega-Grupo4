@@ -3,6 +3,9 @@ import {
   validarionesFormularioAfd,
   isEmptyObject,
 } from './validacionesForm.js';
+import {
+  peticionInfo
+} from './logs.js';
 
 const div = document.querySelector('#form');
 let automataAFD;
@@ -70,9 +73,8 @@ export const crearFormularioAfd = () => {
           </form>
 
           <a 
-          href = "./vista.php" 
+          href = "./afd.php" 
           class = "btn btn-dark my-3"
-          id = "btnEr" 
           type = "button">
           Pasar a "ER" 
           </a>
