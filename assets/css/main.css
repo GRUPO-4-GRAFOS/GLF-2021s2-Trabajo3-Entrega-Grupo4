@@ -1,8 +1,10 @@
 body {
   background-color: #eee;
 }
-#mynetwork {
-  width: 600px;
-  height: 400px;
+
+.mynetwork {
+  margin: 0px auto;
+  /* width: 650px; */
+  height: 500px;
   border: 1px solid lightgray;
 }

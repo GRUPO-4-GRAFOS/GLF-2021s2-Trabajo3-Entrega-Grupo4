@@ -34,9 +34,35 @@
           />
         </div>
       </nav>
-      <h1> Si </h1>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 mt-5">
+          <h1 class="text-center">AP 1</h1>
+          <div class="mynetwork" id="ap1"></div>
+        </div>
+        <div class="col-sm-12 col-md-6 mt-5">
+        <h1 class="text-center">AP 2</h1>
+          <div class="mynetwork" id="ap2"></div>
+        </div>
       </div>
+      <div class="row justify-content-center my-5">
+        <div class="row">
+        <div class="col-sm-12 col-md-6 mt-5">
+          <h1 class="text-center">Unión</h1>
+          <div class="mynetwork" id="union"></div>
+        </div>
+        <div class="col-sm-12 col-md-6 mt-5">
+        <h1 class="text-center">Concatenación</h1>
+          <div class="mynetwork" id="concatenacion"></div>
+        </div>
+      </div>
+      
+      </div>
+      
     <!--Fin container-->
   </body>
-  <script src="./assets/js/funcionesap.js" type="module"></script>
+  <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+  <script src="./assets/js/funcionesap.js" ></script>
 </html>
