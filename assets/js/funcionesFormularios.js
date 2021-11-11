@@ -1,4 +1,3 @@
-import { peticionInfo } from './logs.js';
 import {
   validacionesTransiciones,
   validarionesFormularioAfd,
@@ -12,7 +11,6 @@ let automataP2;
 let conecAfd = [];
 let conecAp1 = [];
 let conecAp2 = [];
-
 /** Funciones para crear formularios **/
 export const crearFormularioAfd = () => {
   const html = `
@@ -98,19 +96,19 @@ export const crearFormularioPl = () => {
               id="abecedario-ap-1"
             />
             <input
-              placeholder="Estado inicial: q0"
+              placeholder="Estado inicial: r0"
               type="text"
               class="form-control mt-3"
               id="estadoInicial-ap-1"
             />
             <input
-              placeholder="Estados Automatas: q1, q2, q3"
+              placeholder="Estados Automatas: r1, r2, r3"
               type="text"
               class="form-control mt-3"
               id="estadosAutomata-ap-1"
             />
             <input
-              placeholder="Estados finales: qf, qf1"
+              placeholder="Estados finales: rf, rf1"
               type="text"
               class="form-control mt-3"
               id="estadosFinales-ap-1"
@@ -122,7 +120,7 @@ export const crearFormularioPl = () => {
           <h1 class="text-center mt-3">Transiciones</h1>
           <form id="form-conecciones-ap-1">
             <input
-              placeholder="Estado inicio: q0, q1..."
+              placeholder="Estado inicio: r0, r1..."
               type="text"
               class="form-control"
               id="estadoInicio-ap-1"
@@ -134,7 +132,7 @@ export const crearFormularioPl = () => {
               id="simbolo-ap-1"
             />
             <input
-              placeholder="Estados Llegada: qf"
+              placeholder="Estados Llegada: rf"
               type="text"
               class="form-control mt-3"
               id="estadoFinal-ap-1"
@@ -196,7 +194,7 @@ export const crearFormularioPl = () => {
             />
             <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
-          <a href = "./vistaap.php" class = "btn btn-dark my-3"> Ver Automatas AP </a>
+          <a href = "./ap.php" class = "btn btn-dark my-3"> Ver Automatas AP </a>
   </div>`;
 
   div.innerHTML = html;
@@ -431,7 +429,7 @@ export const ejecutarFormularioTransicionesAP2 = () => {
     simbolo.value,
     estadoLlegada.value,
     automataP2.abecedario,
-    automataP2.estadosAutomata,
+    automataP2.estadosAutomata
   );
 
   if (!validaciones) {
