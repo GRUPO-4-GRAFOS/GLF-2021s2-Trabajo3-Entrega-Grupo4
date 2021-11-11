@@ -34,9 +34,18 @@
           />
         </div>
       </nav>
-      <h1> Si </h1>
+      si
+      <div class="row">
+        <div class="col-6 mt-5">
+          <h1 class="text-center">Automata 1</h1>
+          <div class="data" id="mynetwork"></div>
+        </div>
+      </div>
+
       </div>
     <!--Fin container-->
   </body>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="./assets/js/Automata.js" type="module"></script>
   <script src="./assets/js/funcionesap.js" type="module"></script>
 </html>

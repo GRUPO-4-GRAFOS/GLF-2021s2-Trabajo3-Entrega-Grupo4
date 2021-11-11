@@ -70,13 +70,16 @@ export const crearFormularioAfd = () => {
             />
             <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
-          <a href = "./vista.php" class = "btn btn-dark my-3">Pasar a "ER" </a>
-          <!--fin Formularios transiciones-->
-          <form>
-          
-          <input value="aaa" "href="./afd.php" id="btn-afd-send" class="btn btn-default btn-dark btn-large" type="submit" />
 
-          </form>
+          <a 
+          href = "./vista.php" 
+          class = "btn btn-dark my-3"
+          id = "btnEr" 
+          type = "button">
+          Pasar a "ER" 
+          </a>
+
+          <!--fin Formularios transiciones-->
         </div>`;
 
   div.innerHTML = html;
