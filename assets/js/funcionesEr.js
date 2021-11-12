@@ -43,7 +43,7 @@ export const crearAutomata = () => {
   });
 
   //revisa cada transición para encontrar los valores y agregarlos al arreglo de conexiones.
-  c1.forEach(({ estadoInicial, simbolo, estadosFinales }) => {
+  c1.forEach(({estadoInicial, simbolo, estadosFinales}) => {
     const arista = {};
     nodosAFD.forEach(element => {
       if (element.label === estadoInicial) {
@@ -60,7 +60,7 @@ export const crearAutomata = () => {
   //?=================================Datos del autómata AFD a vis dataset============================================
   const nodosAutomata = new vis.DataSet(nodosAFD);
   const aristasAutomata = new vis.DataSet(conexionAFD);
-  const network = document.querySelector('#AFD');
+  const network = document.querySelector('#afd');
 
   const data = {
     nodes: nodosAutomata,
