@@ -2,6 +2,10 @@
 let nodosAFD = [];
 let conexionAFD = [];
 
+//?=================================Obtención datos automata AFD============================================
+const a1 = JSON.parse(localStorage.getItem('AFD'));
+//?=================================Obtención transiciones============================================
+const c1 = JSON.parse(localStorage.getItem('transAfd'));
 
 //?=================================Opciones de vis.js============================================
 const options = {
@@ -22,13 +26,8 @@ const options = {
   },
 };
 
-export const crearAutomata = () => {
+const crearAutomata = () => {
   let contadorAFD = 0;
-
-  //?=================================Obtención datos automata AFD============================================
-  const a1 = JSON.parse(localStorage.getItem('AFD'));
-  //?=================================Obtención transiciones============================================
-  const c1 = JSON.parse(localStorage.getItem('transAfd'));
 
   //?=================================Adecuamos los datos a vis.js============================================
   a1.estadosAutomata.forEach(element => {
@@ -69,7 +68,8 @@ export const crearAutomata = () => {
   //?=================================Creación del Grafo============================================
   new vis.Network(network, data, options);
 };
+crearAutomata();
 
-export const er = () => {
+const er = () => {
 
 };

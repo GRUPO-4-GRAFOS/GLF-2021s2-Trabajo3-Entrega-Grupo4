@@ -51,6 +51,9 @@
       
     <!--Fin container-->
   </body>
-  <scrip type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+  ></script>
   <script src="./assets/js/funcionesEr.js"></script>
 </html>
