@@ -41,26 +41,24 @@
           </li>
         </ul>
       </nav>
-    <div class="row">
-        <div class="col-sm-12 col-md-6 mt-5">
-          <h1 class="text-center">AFD</h1>
-          <div class="mynetwork" id="afd"></div>
-        </div>
+      </div>
     </div>
-    <div class="row justify-content-center my-5">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 mt-5">
-                <h1 class="text-center">Expresion regular</h1>
-                <div class="mynetwork" id="AFD_Er"></div>
-            </div>
-        </div>
-    </div>
-      
-    <!--Fin container-->
   </body>
-  <script
-      type="text/javascript"
-      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
-  ></script>
-  <script src="./assets/js/funcionesEr.js"></script>
 </html>
+<p></p>
+<center><h1 class="fs-1">INTEGRANTES</h1></center>
+<script>
+
+    document.write ('<h5 style="text-align: center;"> Lucas Castillo </h5>' );
+    document.write("<br>");
+    document.write('<h5 style="text-align: center;"> Nicolas Garay </h5>' );
+    document.write("<br>");
+    document.write('<h5 style="text-align: center;"> Javiera Gonzalez </h5>' );
+    document.write("<br>");
+    document.write('<h5 style="text-align: center;"> Rocio Leiva </h5>');
+    document.write("<br>");
+    document.write('<h5 style="text-align: center;"> Paula Ruiz </h5>');
+    document.write("<br>");
+    document.write('<h5 style="text-align: center;"> Victor Venegas </h5>');
+
+</script>

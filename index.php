@@ -33,6 +33,13 @@
             height="50"
           />
         </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link link-success active" href="./integrantes.php">
+              Integrantes
+            </a>
+          </li>
+        </ul>
       </nav>
       <!-- fin Navbar -->
       <!--Inicio row Instrucciones-->
