@@ -36,3 +36,7 @@
 [Info] [12-11-21 16:25:34 ]:Transiciones del Automata( Estado base: q0 Simbolo: a Estado final: q1 Automata: AFD )
 [Info] [12-11-21 16:25:40 ]:Transiciones del Automata( Estado base: q1 Simbolo: b Estado final: q2 Automata: AFD )
 [Info] [12-11-21 16:26:39 ]:Datos del automata( El abecedario: a b El estado Inicial: q0 El estados Automatas: q0 q1 q2 El estado final: q2 El automata es: AFD)
+[Info] [12-11-21 16:28:08 ]:Datos del automata( El abecedario: a b El estado Inicial: q0 El estados Automatas: q0 q1 q2 El estado final: q2 El automata es: AFD)
+[Info] [12-11-21 16:28:13 ]:Transiciones del Automata( Estado base: q0 Simbolo: a Estado final: q1 Automata: AFD )
+[Info] [12-11-21 16:30:18 ]:Datos del automata( El abecedario: a b El estado Inicial: q0 El estados Automatas: q0 q1 q2 El estado final: q2 El automata es: AFD)
+[Info] [12-11-21 16:30:23 ]:Transiciones del Automata( Estado base: q0 Simbolo: a Estado final: q1 Automata: AFD )

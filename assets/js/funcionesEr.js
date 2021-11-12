@@ -42,13 +42,13 @@ const crearAutomata = () => {
   });
 
   //revisa cada transición para encontrar los valores y agregarlos al arreglo de conexiones.
-  c1.forEach(({estadoInicial, simbolo, estadosFinales}) => {
+  c1.forEach(({estadoInicial, simbolo, estadoLlegada}) => {
     const arista = {};
     nodosAFD.forEach(element => {
       if (element.label === estadoInicial) {
         arista.from = element.id;
       }
-      if (element.label === estadosFinales) {
+      if (element.label === estadoLlegada) {
         arista.to = element.id;
         arista.label = simbolo;
       }

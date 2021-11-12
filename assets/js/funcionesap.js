@@ -92,7 +92,6 @@ const automata2 = () => {
         arista.label = simbolo;
       }
     });
-
     edges.push(arista);
   });
 
