@@ -71,9 +71,10 @@ export const crearFormularioAfd = () => {
             />
             <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
-
+          <p></p>
           <a 
           href = "./afd.php" 
+          style="text-align: center; display: inline-block; width: 100%;"
           class = "btn btn-dark my-3"
           type = "button">
           Pasar a "ER" 
@@ -196,8 +197,14 @@ export const crearFormularioPl = () => {
             />
             <input value="Crear Conexión" class="btn bt-lg btn-dark mt-3" type="submit" />
           </form>
-          <a href = "./ap.php" class = "btn btn-dark my-3"> Ver Automatas AP </a>
-  </div>`;
+  </div>
+  <a
+  href = "./ap.php"
+  style="text-align: center; display: inline-block; width: 12%;" 
+  class = "btn btn-dark my-3"
+  type = "button">          
+   Ver Automatas AP </a>`;
+  
 
   div.innerHTML = html;
 };
