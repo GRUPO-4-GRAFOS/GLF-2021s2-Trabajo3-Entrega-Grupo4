@@ -24,7 +24,7 @@
       <h1 class="text-center mt-3">Trabajo N°3 Grafos AFD y ER</h1>
       <!-- Inicio Navbar -->
       <nav class="navbar-expand-lg navbar navbar-dark bg-dark mt-3">
-        <div class="container-fluid">
+        <div class="container">
           <img
             src="./assets/img/UTEM.svg.png"
             alt="logo-utem"
@@ -41,24 +41,19 @@
           </li>
         </ul>
       </nav>
+      <div class="row justify-content-center mt-3">
+        <div class="col-6">
+          <h1 class="text-center">INTEGRANTES</h1>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h3>Lucas Castillo</h3></li>
+            <li class="list-group-item"><h3>Nicolas Garay</h3></li>
+            <li class="list-group-item"><h3>Javiera Gonzalez</h3></li>
+            <li class="list-group-item"><h3>Rocio Leiva</h3></li>
+            <li class="list-group-item"><h3>Paula Ruiz</h3></li>
+            <li class="list-group-item"><h3>Victor Venegas</h3></li>
+          </ul>
+        </div>
       </div>
-    </div>
+      </div>
   </body>
 </html>
-<p></p>
-<center><h1 class="fs-1">INTEGRANTES</h1></center>
-<script>
-
-    document.write ('<h5 style="text-align: center;"> Lucas Castillo </h5>' );
-    document.write("<br>");
-    document.write('<h5 style="text-align: center;"> Nicolas Garay </h5>' );
-    document.write("<br>");
-    document.write('<h5 style="text-align: center;"> Javiera Gonzalez </h5>' );
-    document.write("<br>");
-    document.write('<h5 style="text-align: center;"> Rocio Leiva </h5>');
-    document.write("<br>");
-    document.write('<h5 style="text-align: center;"> Paula Ruiz </h5>');
-    document.write("<br>");
-    document.write('<h5 style="text-align: center;"> Victor Venegas </h5>');
-
-</script>
